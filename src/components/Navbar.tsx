@@ -1,5 +1,5 @@
 import './Navbar.css';
-import logoIcon from '../assets/Logo Icon.svg';
+import logoMark from '../assets/Logo Mark.svg';
 import appStoreIcon from '../assets/App Store Icon.svg';
 
 export default function Navbar() {
@@ -7,10 +7,9 @@ export default function Navbar() {
     <nav className="nav-wrap" aria-label="Main navigation">
       <div className="nav-pill">
 
-        {/* Logo */}
+        {/* Logo Mark (icon + wordmark in one SVG) */}
         <div className="nav-logo">
-          <img src={logoIcon} alt="" className="nav-logo-icon" aria-hidden="true" />
-          <span className="nav-logo-wordmark">Made Songs</span>
+          <img src={logoMark} alt="Made Songs" className="nav-logo-mark" />
         </div>
 
         {/* Get the App CTA */}

@@ -13,7 +13,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 51px clamp(28px, 3.4vw, 61px) 51px clamp(20px, 2.5vw, 51px);
+  padding: 51px clamp(48px, 5vw, 96px) 51px clamp(20px, 2.5vw, 51px);
 }
 
 .hero-text-block {
@@ -76,7 +76,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 51px clamp(20px, 2.5vw, 51px) 51px clamp(28px, 3.4vw, 61px);
+  padding: 51px clamp(20px, 2.5vw, 51px) 51px clamp(48px, 5vw, 96px);
 }
 
 .hero-mockup-img {

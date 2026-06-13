@@ -24,26 +24,16 @@
 /* ── Logo ──────────────────────────────────────────────────── */
 .nav-logo {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 9px;
   flex-shrink: 0;
 }
 
-.nav-logo-icon {
-  width: 34px;
-  height: 33px;
+/* The Logo Mark SVG is the full icon + wordmark lockup (122×41px natural size) */
+.nav-logo-mark {
+  width: 121.46px;
+  height: 40px;
+  display: block;
   flex-shrink: 0;
-}
-
-.nav-logo-wordmark {
-  font-family: var(--font-brand);
-  font-weight: 500;
-  font-size: 19.5px;
-  line-height: 82%;
-  letter-spacing: -0.02em;
-  color: #111111;
-  white-space: nowrap;
 }
 
 /* ── CTA button ────────────────────────────────────────────── */
