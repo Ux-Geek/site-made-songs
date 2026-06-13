@@ -109,11 +109,10 @@
   margin: 0;
 }
 
-/* ── CTA button — pinned to bottom of left column ──────────── */
+/* ── CTA button — pushed to bottom of flex column ──────────── */
 .scroll-hero-btn {
-  position: absolute;
-  bottom: clamp(48px, 8vh, 80px);
-  left: 0;
+  margin-top: auto;
+  margin-bottom: clamp(48px, 8vh, 80px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -126,6 +125,8 @@
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.18s ease;
+  /* align to left edge of the content (matching .scroll-copy-area) */
+  align-self: flex-start;
 }
 
 .scroll-hero-btn:hover { opacity: 0.82; }
@@ -232,7 +233,6 @@
   }
 
   .scroll-hero-btn {
-    left: 50%;
-    transform: translateX(-50%);
+    align-self: center;
   }
 }
