@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Link columns */}
         <nav className="footer-links" aria-label="Footer links">
           <div className="footer-link-col">
-            <a href="#" className="footer-link">Drop a Feedback</a>
+            <a href="#" className="footer-link">Drop Feedback</a>
             <a href="#" className="footer-link">Contact</a>
           </div>
           <div className="footer-link-col">

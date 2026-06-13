@@ -14,7 +14,7 @@ export default function Hero() {
           </h1>
 
           <a href="#" className="hero-btn" id="hero-get-app" aria-label="Get the Made Songs app">
-            <span className="hero-btn-text">Get the app</span>
+            <span className="hero-btn-text">Get the App</span>
             <img src={appStoreIcon} alt="" className="hero-btn-icon" aria-hidden="true" />
           </a>
         </div>

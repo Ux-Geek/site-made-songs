@@ -72,8 +72,9 @@
   background: #ffffff;
   border-radius: 99px;
   flex-shrink: 0;
-  /* positioned above the step text block */
-  margin-bottom: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
   will-change: opacity, transform;
 }
 
@@ -88,12 +89,12 @@
 .scroll-steps-wrapper {
   position: relative;
   width: 100%;
-  height: clamp(120px, 16vh, 180px);
+  height: calc(36px + 1.9 * clamp(30px, 3.4vw, 51px));
 }
 
 .scroll-step-text {
   position: absolute;
-  top: 0;
+  top: 36px;
   left: 0;
   width: 100%;
   will-change: opacity, transform, filter;
@@ -111,17 +112,17 @@
 
 /* ── CTA button — nested inside copy area ──────────── */
 .scroll-hero-btn {
-  margin-top: clamp(24px, 4vh, 48px);
+  margin-top: 0;
   margin-bottom: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 20px;
+  gap: 10px;
+  padding: 12px 24px;
   background: linear-gradient(90deg, #000000 0%, #666666 100%);
   border: 0.7px solid #6a6a6a;
   border-radius: 117px;
-  height: 44px;
+  height: 51px;
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.18s ease;
@@ -133,7 +134,7 @@
 .scroll-hero-btn-text {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 95%;
   letter-spacing: 0.005em;
   color: #ffffff;
@@ -141,8 +142,8 @@
 }
 
 .scroll-hero-btn-icon {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   flex-shrink: 0;
 }
 

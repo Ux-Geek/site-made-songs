@@ -130,22 +130,22 @@ export default function ScrollHero() {
           {/* All text layers stack here */}
           <div className="scroll-copy-area">
 
-            {/* Layer 0: initial hero headline */}
-            <div className="scroll-initial-headline" ref={heroTextRef}>
-              <h1 className="scroll-initial-h1">
-                Make a song,<br />gift a song.
-              </h1>
-            </div>
-
-            {/* Step indicator pill — hidden until steps begin */}
-            <div className="step-indicator" ref={indicatorRef}>
-              <div className="step-dot" ref={el => { dotRefs.current[0] = el; }} />
-              <div className="step-dot" ref={el => { dotRefs.current[1] = el; }} />
-              <div className="step-dot" ref={el => { dotRefs.current[2] = el; }} />
-            </div>
-
-            {/* Step copy blocks — stacked, all hidden initially */}
             <div className="scroll-steps-wrapper">
+              {/* Layer 0: initial hero headline */}
+              <div className="scroll-initial-headline" ref={heroTextRef}>
+                <h1 className="scroll-initial-h1">
+                  Make a song,<br />gift a song.
+                </h1>
+              </div>
+
+              {/* Step indicator pill — hidden until steps begin */}
+              <div className="step-indicator" ref={indicatorRef}>
+                <div className="step-dot" ref={el => { dotRefs.current[0] = el; }} />
+                <div className="step-dot" ref={el => { dotRefs.current[1] = el; }} />
+                <div className="step-dot" ref={el => { dotRefs.current[2] = el; }} />
+              </div>
+
+              {/* Step copy blocks — stacked, all hidden initially */}
               {STEPS.map((step, i) => (
                 <div
                   key={step.id}
@@ -153,9 +153,7 @@ export default function ScrollHero() {
                   ref={el => { textRefs.current[i] = el; }}
                 >
                   <h2 className="scroll-step-headline">
-                    {step.lines.map((line, j) => (
-                      <span key={j}>{line}<br /></span>
-                    ))}
+                    {step.lines[0]}<br />{step.lines[1]}
                   </h2>
                 </div>
               ))}
@@ -168,7 +166,7 @@ export default function ScrollHero() {
               id="scroll-get-app"
               aria-label="Get the Made Songs app"
             >
-              <span className="scroll-hero-btn-text">Get the app</span>
+              <span className="scroll-hero-btn-text">Get the App</span>
               <img
                 src={appStoreIcon}
                 alt=""
