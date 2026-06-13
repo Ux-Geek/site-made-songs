@@ -14,7 +14,7 @@ export default function Footer() {
             <img src={logoMark} alt="Made Songs" className="footer-logo-mark" />
           </div>
           <p className="footer-tagline">
-            Made Songs helps you make a song for your special person and gift them.
+            Made Songs helps you make a song for<br />your special person and gift them.
           </p>
         </div>
 
