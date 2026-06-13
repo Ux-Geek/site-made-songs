@@ -193,6 +193,8 @@ export default function ScrollHero() {
                   alt={i === 0 ? "Made Songs Hero Mockup" : `Made Songs Step ${i} Mockup`}
                   className="scroll-mockup-img"
                   draggable={false}
+                  loading={i === 0 || i === 1 ? "eager" : "lazy"}
+                  {...(i === 0 ? { fetchPriority: "high" } : {})}
                 />
               </div>
             ))}
