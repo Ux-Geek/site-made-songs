@@ -5,39 +5,13 @@ export default function Footer() {
   return (
     <footer className="footer-wrap" aria-label="Footer">
 
-      {/* ── Top row: brand + nav links ── */}
-      <div className="footer-main">
-
-        {/* Brand column */}
-        <div className="footer-brand">
-          <div className="footer-logo">
-            <img src={logoMark} alt="Made Songs" className="footer-logo-mark" />
-          </div>
-          <p className="footer-tagline">
-            Made Songs helps you make a song for<br />your special person and gift them.
-          </p>
+      {/* ── Top row: Logo + Socials ── */}
+      <div className="footer-header">
+        <div className="footer-logo">
+          <img src={logoMark} alt="Made Songs" className="footer-logo-mark" />
         </div>
 
-        {/* Link columns */}
-        <nav className="footer-links" aria-label="Footer links">
-          <div className="footer-link-col">
-            <a href="#" className="footer-link">Drop Feedback</a>
-            <a href="#" className="footer-link">Contact</a>
-          </div>
-          <div className="footer-link-col">
-            <a href="#" className="footer-link">Terms of Use</a>
-            <a href="#" className="footer-link">Privacy Policy</a>
-          </div>
-        </nav>
-
-      </div>
-
-      {/* ── Bottom bar: copyright + social icons ── */}
-      <div className="footer-bottom">
-        <p className="footer-copy">© 2026. Made Songs Inc.</p>
-
         <div className="footer-socials" aria-label="Social links">
-
           {/* X / Twitter */}
           <a href="#" aria-label="Follow on X" id="social-x">
             <svg className="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -65,8 +39,31 @@ export default function Footer() {
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
           </a>
-
         </div>
+      </div>
+
+      {/* ── Middle row: brand tagline + nav links ── */}
+      <div className="footer-main">
+        <p className="footer-tagline">
+          Made Songs helps you make a song for<br />your special person and gift them.
+        </p>
+
+        {/* Link columns */}
+        <nav className="footer-links" aria-label="Footer links">
+          <div className="footer-link-col">
+            <a href="#" className="footer-link">Drop Feedback</a>
+            <a href="#" className="footer-link">Contact</a>
+          </div>
+          <div className="footer-link-col">
+            <a href="#" className="footer-link">Terms of Use</a>
+            <a href="#" className="footer-link">Privacy Policy</a>
+          </div>
+        </nav>
+      </div>
+
+      {/* ── Bottom row: copyright ── */}
+      <div className="footer-bottom">
+        <p className="footer-copy">© 2026. Made Songs Inc.</p>
       </div>
 
     </footer>

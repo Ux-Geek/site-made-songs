@@ -7,13 +7,22 @@
   gap: 30px;
 }
 
-/* ── Top row: brand + links (no divider line) ──────────────── */
+/* ── Header row: Logo + Socials ────────────────────────────── */
+.footer-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 34px;
+}
+
+/* ── Middle row: brand tagline + nav links ─────────────────── */
 .footer-main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
-  padding-top: 34px;
+  align-items: flex-start;
 }
 
 /* ── Brand column ──────────────────────────────────────────── */
@@ -82,12 +91,10 @@
   color: #111111;
 }
 
-/* ── Bottom bar: copyright + socials ───────────────────────── */
+/* ── Bottom bar: copyright only ────────────────────────────── */
 .footer-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  padding-top: 20px;
+  margin-top: 10px;
 }
 
 .footer-copy {
@@ -129,13 +136,7 @@
   .footer-main {
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
-    padding-top: 24px;
-  }
-
-  .footer-brand {
-    max-width: 100%;
-    gap: 14px;
+    gap: 24px;
   }
 
   .footer-links {
@@ -145,17 +146,7 @@
   }
 
   .footer-bottom {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-    padding-top: 8px;
-  }
-
-  .footer-copy {
-    align-self: flex-start;
-  }
-
-  .footer-socials {
-    align-self: flex-end;
+    padding-top: 16px;
+    margin-top: 16px;
   }
 }
