@@ -1,20 +1,19 @@
 /* ── Footer outer wrapper ──────────────────────────────────── */
 .footer-wrap {
-  padding: 0 clamp(40px, 12vw, 221px);
-  padding-bottom: 48px;
+  padding: 0 clamp(34px, 10vw, 188px);
+  padding-bottom: 41px;
   display: flex;
   flex-direction: column;
-  gap: 36px;
+  gap: 30px;
 }
 
-/* ── Top row: brand + links ────────────────────────────────── */
+/* ── Top row: brand + links (no divider line) ──────────────── */
 .footer-main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  border-top: 1px solid #e5e5e5;
-  padding-top: 40px;
+  padding-top: 34px;
 }
 
 /* ── Brand column ──────────────────────────────────────────── */
@@ -22,29 +21,28 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 24px;
-  max-width: 352px;
+  gap: 20px;
+  max-width: 299px;
 }
 
 .footer-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10.8px;
-  width: 121.46px;
-  height: 40px;
+  gap: 9px;
+  height: 34px;
 }
 
 .footer-logo-icon {
-  width: 40.11px;
-  height: 39.06px;
+  width: 34px;
+  height: 33px;
   flex-shrink: 0;
 }
 
 .footer-logo-wordmark {
   font-family: var(--font-brand);
   font-weight: 500;
-  font-size: 22.963px;
+  font-size: 19.5px;
   line-height: 82%;
   letter-spacing: -0.02em;
   color: #111111;
@@ -53,7 +51,7 @@
 .footer-tagline {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 125%;
   letter-spacing: -0.015em;
   color: var(--muted);
@@ -63,7 +61,7 @@
 .footer-links {
   display: flex;
   flex-direction: row;
-  gap: 64px;
+  gap: 54px;
   align-items: flex-end;
 }
 
@@ -71,13 +69,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
+  gap: 5px;
 }
 
 .footer-link {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 125%;
   letter-spacing: -0.015em;
   color: var(--muted);
@@ -101,7 +99,7 @@
 .footer-copy {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 125%;
   letter-spacing: -0.015em;
   color: var(--muted);
@@ -111,12 +109,12 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .social-icon {
-  width: 22px;
-  height: 22px;
+  width: 19px;
+  height: 19px;
   color: #111111;
   cursor: pointer;
   transition: opacity 0.15s ease;
@@ -131,20 +129,20 @@
 @media (max-width: 900px) {
   .footer-main {
     flex-direction: column;
-    gap: 40px;
+    gap: 34px;
     align-items: flex-start;
   }
 
   .footer-links {
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 540px) {
   .footer-bottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 17px;
     align-items: flex-start;
   }
 }
