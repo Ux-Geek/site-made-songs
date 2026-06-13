@@ -232,6 +232,10 @@
     padding: 0 24px;
   }
 
+  .step-indicator {
+    left: calc(50% - 38px);
+  }
+
   .scroll-hero-btn {
     align-self: center;
   }
