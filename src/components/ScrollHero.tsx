@@ -3,7 +3,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './ScrollHero.css';
 import appStoreIcon from '../assets/App Store Icon.svg';
-import phoneImg from '../assets/iPhone Mockup Hero.png';
+import phoneHero from '../assets/iPhone Mockup Hero.png';
+import phoneImg1 from '../assets/iPhone Mockup 1.png';
+import phoneImg2 from '../assets/iPhone Mockup 2.png';
+import phoneImg3 from '../assets/iPhone Mockup 3.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,8 +17,7 @@ const STEPS = [
   { id: 3, lines: ['Gift them', 'a song.'] },
 ];
 
-/* Swap for 3 different app screenshots when ready */
-const MOCKUP_IMAGES = [phoneImg, phoneImg, phoneImg];
+const MOCKUP_IMAGES = [phoneHero, phoneImg1, phoneImg2, phoneImg3];
 
 export default function ScrollHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -86,7 +88,8 @@ export default function ScrollHero() {
         .to(textRefs.current[0], {
           opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8,
         }, 2.2)
-        .to(mockupRefs.current[0], { opacity: 1, scale: 1, duration: 0.6 }, 2)
+        .to(mockupRefs.current[0], { opacity: 0, scale: 1.03, duration: 0.6 }, 2)
+        .to(mockupRefs.current[1], { opacity: 1, scale: 1,    duration: 0.6 }, 2.3)
 
         /* ── Step 1 → Step 2 ────────────────────────────── */
         .to(textRefs.current[0], {
@@ -97,8 +100,8 @@ export default function ScrollHero() {
         }, 4.2)
         .to(dotRefs.current[0], { width: 4,  backgroundColor: '#C3C3C3', duration: 0.4 }, 4)
         .to(dotRefs.current[1], { width: 12, backgroundColor: '#2D2D2D', duration: 0.4 }, 4.2)
-        .to(mockupRefs.current[0], { opacity: 0, scale: 1.03, duration: 0.6 }, 4)
-        .to(mockupRefs.current[1], { opacity: 1, scale: 1,    duration: 0.6 }, 4.3)
+        .to(mockupRefs.current[1], { opacity: 0, scale: 1.03, duration: 0.6 }, 4)
+        .to(mockupRefs.current[2], { opacity: 1, scale: 1,    duration: 0.6 }, 4.3)
 
         /* ── Step 2 → Step 3 ────────────────────────────── */
         .to(textRefs.current[1], {
@@ -109,8 +112,8 @@ export default function ScrollHero() {
         }, 6.2)
         .to(dotRefs.current[1], { width: 4,  backgroundColor: '#C3C3C3', duration: 0.4 }, 6)
         .to(dotRefs.current[2], { width: 12, backgroundColor: '#2D2D2D', duration: 0.4 }, 6.2)
-        .to(mockupRefs.current[1], { opacity: 0, scale: 1.03, duration: 0.6 }, 6)
-        .to(mockupRefs.current[2], { opacity: 1, scale: 1,    duration: 0.6 }, 6.3);
+        .to(mockupRefs.current[2], { opacity: 0, scale: 1.03, duration: 0.6 }, 6)
+        .to(mockupRefs.current[3], { opacity: 1, scale: 1,    duration: 0.6 }, 6.3);
 
     }, containerRef);
 
@@ -157,23 +160,24 @@ export default function ScrollHero() {
                 </div>
               ))}
             </div>
-          </div>
 
-          {/* CTA — anchored at bottom, never moves */}
-          <a
-            href="#"
-            className="scroll-hero-btn"
-            id="scroll-get-app"
-            aria-label="Get the Made Songs app"
-          >
-            <span className="scroll-hero-btn-text">Get the app</span>
-            <img
-              src={appStoreIcon}
-              alt=""
-              className="scroll-hero-btn-icon"
-              aria-hidden="true"
-            />
-          </a>
+            {/* CTA — nested inside copy area so it aligns perfectly with the text */}
+            <a
+              href="#"
+              className="scroll-hero-btn"
+              id="scroll-get-app"
+              aria-label="Get the Made Songs app"
+            >
+              <span className="scroll-hero-btn-text">Get the app</span>
+              <img
+                src={appStoreIcon}
+                alt=""
+                className="scroll-hero-btn-icon"
+                aria-hidden="true"
+              />
+            </a>
+
+          </div>
 
         </div>
 
@@ -188,7 +192,7 @@ export default function ScrollHero() {
               >
                 <img
                   src={img}
-                  alt={`Made Songs — step ${i + 1}`}
+                  alt={i === 0 ? "Made Songs Hero Mockup" : `Made Songs Step ${i} Mockup`}
                   className="scroll-mockup-img"
                   draggable={false}
                 />

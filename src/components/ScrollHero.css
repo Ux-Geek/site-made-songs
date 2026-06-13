@@ -25,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 0 clamp(72px, 8vw, 140px) 0 clamp(20px, 2.5vw, 51px);
+  padding: 0 clamp(24px, 4vw, 60px) 0 clamp(48px, 6vw, 120px);
   height: 100%;
 }
 
@@ -109,10 +109,10 @@
   margin: 0;
 }
 
-/* ── CTA button — pushed to bottom of flex column ──────────── */
+/* ── CTA button — nested inside copy area ──────────── */
 .scroll-hero-btn {
-  margin-top: auto;
-  margin-bottom: clamp(48px, 8vh, 80px);
+  margin-top: clamp(24px, 4vh, 48px);
+  margin-bottom: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +125,6 @@
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.18s ease;
-  /* align to left edge of the content (matching .scroll-copy-area) */
   align-self: flex-start;
 }
 
@@ -154,7 +153,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 0 clamp(72px, 8vw, 140px) 0 clamp(20px, 2.5vw, 51px);
+  padding: 0 clamp(48px, 6vw, 120px) 0 clamp(24px, 4vw, 60px);
   height: 100%;
 }
 
