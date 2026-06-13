@@ -1,5 +1,5 @@
 import './Footer.css';
-import logoIcon from '../assets/Logo Icon.svg';
+import logoMark from '../assets/Logo Mark.svg';
 
 export default function Footer() {
   return (
@@ -11,8 +11,7 @@ export default function Footer() {
         {/* Brand column */}
         <div className="footer-brand">
           <div className="footer-logo">
-            <img src={logoIcon} alt="" className="footer-logo-icon" aria-hidden="true" />
-            <span className="footer-logo-wordmark">Made Songs</span>
+            <img src={logoMark} alt="Made Songs" className="footer-logo-mark" />
           </div>
           <p className="footer-tagline">
             Made Songs helps you make a song for your special person and gift them.

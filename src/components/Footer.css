@@ -27,25 +27,15 @@
 
 .footer-logo {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 9px;
-  height: 34px;
 }
 
-.footer-logo-icon {
-  width: 34px;
-  height: 33px;
+/* Full icon + wordmark lockup (122×41px natural size) */
+.footer-logo-mark {
+  width: 121.46px;
+  height: 40px;
+  display: block;
   flex-shrink: 0;
-}
-
-.footer-logo-wordmark {
-  font-family: var(--font-brand);
-  font-weight: 500;
-  font-size: 19.5px;
-  line-height: 82%;
-  letter-spacing: -0.02em;
-  color: #111111;
 }
 
 .footer-tagline {
