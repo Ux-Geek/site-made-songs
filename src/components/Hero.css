@@ -1,0 +1,107 @@
+/* ── Hero section layout ───────────────────────────────────── */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 clamp(40px, 13vw, 276px);
+  gap: clamp(60px, 8vw, 120px);
+  min-height: 100vh;
+  padding-top: 130px;
+  padding-bottom: 220px;
+}
+
+/* ── Left column: headline + CTA ──────────────────────────── */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 56px;
+  flex-shrink: 0;
+}
+
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 36px;
+}
+
+.hero-headline {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(56px, 6.5vw, 96px);
+  line-height: 95%;
+  text-align: right;
+  letter-spacing: -0.04em;
+  color: #000000;
+  max-width: 560px;
+}
+
+/* ── CTA button ────────────────────────────────────────────── */
+.hero-btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 22px;
+  gap: 14px;
+  background: linear-gradient(90deg, #000000 0%, #666666 100%);
+  border: 0.7px solid #6a6a6a;
+  border-radius: 138px;
+  height: 65px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.18s ease;
+}
+
+.hero-btn:hover {
+  opacity: 0.82;
+}
+
+.hero-btn-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 95%;
+  letter-spacing: 0.005em;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.hero-btn-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* ── Right column: iPhone mockup ───────────────────────────── */
+.hero-right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 130px 32px 60px;
+    gap: 40px;
+  }
+
+  .hero-left {
+    align-items: center;
+  }
+
+  .hero-text-block {
+    align-items: center;
+  }
+
+  .hero-headline {
+    text-align: center;
+    font-size: clamp(44px, 10vw, 72px);
+  }
+}
