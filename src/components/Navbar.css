@@ -28,10 +28,9 @@
   flex-shrink: 0;
 }
 
-/* The Logo Mark SVG is the full icon + wordmark lockup (122×41px natural size) */
 .nav-logo-mark {
-  width: 121.46px;
-  height: 40px;
+  width: 72px;
+  height: auto;
   display: block;
   flex-shrink: 0;
 }

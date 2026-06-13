@@ -32,8 +32,8 @@
 
 /* Full icon + wordmark lockup (122×41px natural size) */
 .footer-logo-mark {
-  width: 121.46px;
-  height: 40px;
+  width: 72px;
+  height: auto;
   display: block;
   flex-shrink: 0;
 }
