@@ -73,10 +73,30 @@
 
 /* ── Right half: mockup, left-aligned toward centre ─────────── */
 .hero-right {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 51px clamp(20px, 2.5vw, 51px) 51px clamp(72px, 8vw, 140px);
+}
+
+/* Ground / contact shadow */
+.hero-right::after {
+  content: '';
+  position: absolute;
+  bottom: 51px;           /* sits at the base of the mockup */
+  left: 50%;
+  transform: translateX(-75%);
+  width: 55%;
+  height: 12px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  border-radius: 50%;
+  filter: blur(6px);
+  pointer-events: none;
 }
 
 .hero-mockup-img {
