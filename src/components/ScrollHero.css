@@ -1,0 +1,198 @@
+/* ── 300vh scroll container ────────────────────────────────── */
+.scroll-hero-container {
+  position: relative;
+  height: 300vh;
+}
+
+/* ── Sticky panel — pinned for entire scroll distance ────────── */
+.scroll-hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding-top: 75px; /* clears fixed navbar */
+  overflow: hidden;
+}
+
+/* ────────────────────────────────────────────────────────────
+   LEFT COLUMN
+   ─────────────────────────────────────────────────────────── */
+.scroll-hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 clamp(72px, 8vw, 140px) 0 clamp(20px, 2.5vw, 51px);
+  height: 100%;
+}
+
+/* Wrapper that gives the absolute stack a concrete height */
+.scroll-steps-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 408px;
+  height: clamp(160px, 20vh, 220px);
+}
+
+/* Each step text block — all stacked at the same position */
+.scroll-step-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  will-change: opacity, transform, filter;
+}
+
+.scroll-step-label {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.scroll-step-headline {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(30px, 3.4vw, 51px);
+  line-height: 95%;
+  letter-spacing: -0.04em;
+  color: #000000;
+  margin: 0;
+}
+
+/* CTA — always visible below the step text area */
+.scroll-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  margin-top: 36px;
+  background: linear-gradient(90deg, #000000 0%, #666666 100%);
+  border: 0.7px solid #6a6a6a;
+  border-radius: 117px;
+  height: 44px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.18s ease;
+  align-self: flex-start;
+}
+
+.scroll-hero-btn:hover { opacity: 0.82; }
+
+.scroll-hero-btn-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 95%;
+  letter-spacing: 0.005em;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.scroll-hero-btn-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ────────────────────────────────────────────────────────────
+   RIGHT COLUMN
+   ─────────────────────────────────────────────────────────── */
+.scroll-hero-right {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 clamp(72px, 8vw, 140px) 0 clamp(20px, 2.5vw, 51px);
+  height: 100%;
+}
+
+/* Mockup stack wrapper — sized to the image */
+.scroll-mockup-stack {
+  position: relative;
+  width: clamp(170px, 24vw, 323px);
+  flex-shrink: 0;
+}
+
+/* Each mockup frame — stacked absolutely */
+.scroll-mockup-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: opacity, transform;
+}
+
+/* First mockup is in flow so the stack has natural height */
+.scroll-mockup-wrap:first-child {
+  position: relative;
+}
+
+.scroll-mockup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ground shadow */
+.scroll-mockup-shadow {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* ────────────────────────────────────────────────────────────
+   RESPONSIVE
+   ─────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .scroll-hero-sticky {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding-top: 80px;
+    align-content: center;
+    gap: 32px;
+  }
+
+  .scroll-hero-left {
+    align-items: center;
+    padding: 0 24px;
+  }
+
+  .scroll-steps-wrapper {
+    max-width: 100%;
+  }
+
+  .scroll-step-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .scroll-step-headline {
+    text-align: center;
+  }
+
+  .scroll-hero-btn {
+    align-self: center;
+  }
+
+  .scroll-hero-right {
+    justify-content: center;
+    padding: 0 24px;
+  }
+}

@@ -4,14 +4,14 @@
  */
 
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import ScrollHero from './components/ScrollHero';
 import Footer from './components/Footer';
 
 export default function App() {
   return (
     <div className="page">
       <Navbar />
-      <Hero />
+      <ScrollHero />
       <Footer />
     </div>
   );
