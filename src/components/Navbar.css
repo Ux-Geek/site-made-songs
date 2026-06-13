@@ -25,20 +25,22 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 9px;
+  gap: 10.8px;
+  width: 121.46px;
+  height: 40px;
   flex-shrink: 0;
 }
 
 .nav-logo-icon {
-  width: 34px;
-  height: 34px;
+  width: 40.11px;
+  height: 39.06px;
   flex-shrink: 0;
 }
 
 .nav-logo-wordmark {
   font-family: var(--font-brand);
   font-weight: 500;
-  font-size: 19px;
+  font-size: 22.963px;
   line-height: 82%;
   letter-spacing: -0.02em;
   color: #111111;

@@ -1,4 +1,5 @@
 import './Footer.css';
+import logoIcon from '../assets/Logo Icon.svg';
 
 export default function Footer() {
   return (
@@ -10,10 +11,7 @@ export default function Footer() {
         {/* Brand column */}
         <div className="footer-brand">
           <div className="footer-logo">
-            <svg className="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="20" cy="20" r="20" fill="#FF0000"/>
-              <path d="M27 14v8.5a3.5 3.5 0 1 1-2-3.163V16l-8 1.6V25a3.5 3.5 0 1 1-2-3.163V13l12-2.4V14z" fill="#fff"/>
-            </svg>
+            <img src={logoIcon} alt="" className="footer-logo-icon" aria-hidden="true" />
             <span className="footer-logo-wordmark">Made Songs</span>
           </div>
           <p className="footer-tagline">

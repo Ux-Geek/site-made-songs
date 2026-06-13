@@ -1,52 +1,47 @@
-/* ── Hero section layout ───────────────────────────────────── */
+/* ── Hero: full-height, two equal halves centred on the page ─ */
 .hero {
   flex: 1;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 0 clamp(32px, 9vw, 200px);
-  gap: clamp(40px, 5vw, 80px);
   min-height: 100vh;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 88px; /* clears fixed navbar */
 }
 
-/* ── Left column: headline + CTA ──────────────────────────── */
+/* ── Left half: headline + CTA, right-aligned inside its cell  */
 .hero-left {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  gap: 56px;
-  flex-shrink: 0;
+  justify-content: flex-end;     /* push content toward the centre */
+  align-items: center;
+  padding: 60px clamp(32px, 4vw, 72px) 60px clamp(24px, 3vw, 60px);
 }
 
 .hero-text-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 36px;
+  max-width: 480px;
 }
 
+/* ── Headline ──────────────────────────────────────────────── */
 .hero-headline {
   font-family: var(--font-body);
   font-weight: 500;
   font-size: clamp(36px, 4vw, 60px);
   line-height: 95%;
-  text-align: right;
+  text-align: left;
   letter-spacing: -0.04em;
   color: #000000;
-  max-width: 420px;
 }
 
 /* ── CTA button ────────────────────────────────────────────── */
 .hero-btn {
   display: inline-flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  padding: 12px 20px;
+  justify-content: center;
   gap: 10px;
+  padding: 12px 24px;
   background: linear-gradient(90deg, #000000 0%, #666666 100%);
   border: 0.7px solid #6a6a6a;
   border-radius: 138px;
@@ -76,32 +71,49 @@
   flex-shrink: 0;
 }
 
-/* ── Right column: iPhone mockup ───────────────────────────── */
+/* ── Right half: mockup, left-aligned inside its cell ───────── */
 .hero-right {
-  flex-shrink: 0;
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-start;  /* push toward the centre */
+  align-items: center;
+  padding: 60px clamp(24px, 3vw, 60px) 60px clamp(32px, 4vw, 72px);
 }
 
-/* ── Responsive ────────────────────────────────────────────── */
-@media (max-width: 900px) {
+.hero-mockup-img {
+  width: clamp(200px, 28vw, 380px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 60px rgba(0, 0, 0, 0.12));
+}
+
+/* ── Responsive: stack vertically below 768px ───────────────── */
+@media (max-width: 768px) {
   .hero {
-    flex-direction: column-reverse;
-    align-items: center;
-    padding: 100px 32px 60px;
-    gap: 32px;
+    grid-template-columns: 1fr;
+    padding-top: 80px;
   }
 
   .hero-left {
-    align-items: center;
+    justify-content: center;
+    padding: 48px 28px 24px;
   }
 
   .hero-text-block {
     align-items: center;
+    text-align: center;
   }
 
   .hero-headline {
     text-align: center;
-    font-size: clamp(44px, 10vw, 72px);
+    font-size: clamp(36px, 9vw, 52px);
+  }
+
+  .hero-right {
+    justify-content: center;
+    padding: 0 28px 60px;
+  }
+
+  .hero-mockup-img {
+    width: clamp(180px, 55vw, 280px);
   }
 }
