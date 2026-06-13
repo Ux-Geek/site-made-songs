@@ -1,10 +1,10 @@
-/* ── 300vh scroll container ────────────────────────────────── */
+/* ── 400vh scroll container ────────────────────────────────── */
 .scroll-hero-container {
   position: relative;
-  height: 300vh;
+  height: 400vh;
 }
 
-/* ── Sticky panel — pinned for entire scroll distance ────────── */
+/* ── Sticky panel ───────────────────────────────────────────── */
 .scroll-hero-sticky {
   position: sticky;
   top: 0;
@@ -12,14 +12,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding-top: 75px; /* clears fixed navbar */
+  padding-top: 75px;
   overflow: hidden;
 }
 
-/* ────────────────────────────────────────────────────────────
+/* ═══════════════════════════════════════════════════════════════
    LEFT COLUMN
-   ─────────────────────────────────────────────────────────── */
+   ═══════════════════════════════════════════════════════════════ */
 .scroll-hero-left {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,34 +29,74 @@
   height: 100%;
 }
 
-/* Wrapper that gives the absolute stack a concrete height */
-.scroll-steps-wrapper {
+/* Container for all copy layers — stacks them at the same position */
+.scroll-copy-area {
   position: relative;
   width: 100%;
   max-width: 408px;
-  height: clamp(160px, 20vh, 220px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-/* Each step text block — all stacked at the same position */
+/* ── Initial hero headline (layer 0) ───────────────────────── */
+.scroll-initial-headline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: opacity, transform, filter;
+}
+
+.scroll-initial-h1 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(30px, 3.4vw, 51px);
+  line-height: 95%;
+  letter-spacing: -0.04em;
+  color: #000000;
+  margin: 0;
+}
+
+/* ── Step indicator pill ───────────────────────────────────── */
+.step-indicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 8px;
+  width: 76px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 99px;
+  flex-shrink: 0;
+  /* positioned above the step text block */
+  margin-bottom: 4px;
+  will-change: opacity, transform;
+}
+
+.step-dot {
+  height: 4px;
+  border-radius: 99px;
+  flex-shrink: 0;
+  transition: none; /* GSAP handles all transitions */
+}
+
+/* ── Step copy blocks — all stacked, hidden by GSAP ────────── */
+.scroll-steps-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(120px, 16vh, 180px);
+}
+
 .scroll-step-text {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
   will-change: opacity, transform, filter;
-}
-
-.scroll-step-label {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  text-transform: uppercase;
 }
 
 .scroll-step-headline {
@@ -68,14 +109,16 @@
   margin: 0;
 }
 
-/* CTA — always visible below the step text area */
+/* ── CTA button — pinned to bottom of left column ──────────── */
 .scroll-hero-btn {
+  position: absolute;
+  bottom: clamp(48px, 8vh, 80px);
+  left: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px 20px;
-  margin-top: 36px;
   background: linear-gradient(90deg, #000000 0%, #666666 100%);
   border: 0.7px solid #6a6a6a;
   border-radius: 117px;
@@ -83,7 +126,6 @@
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.18s ease;
-  align-self: flex-start;
 }
 
 .scroll-hero-btn:hover { opacity: 0.82; }
@@ -104,11 +146,10 @@
   flex-shrink: 0;
 }
 
-/* ────────────────────────────────────────────────────────────
+/* ═══════════════════════════════════════════════════════════════
    RIGHT COLUMN
-   ─────────────────────────────────────────────────────────── */
+   ═══════════════════════════════════════════════════════════════ */
 .scroll-hero-right {
-  position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -116,14 +157,13 @@
   height: 100%;
 }
 
-/* Mockup stack wrapper — sized to the image */
 .scroll-mockup-stack {
   position: relative;
   width: clamp(170px, 24vw, 323px);
   flex-shrink: 0;
 }
 
-/* Each mockup frame — stacked absolutely */
+/* All mockup frames stacked — first stays in flow for height */
 .scroll-mockup-wrap {
   position: absolute;
   top: 0;
@@ -131,8 +171,6 @@
   width: 100%;
   will-change: opacity, transform;
 }
-
-/* First mockup is in flow so the stack has natural height */
 .scroll-mockup-wrap:first-child {
   position: relative;
 }
@@ -143,10 +181,10 @@
   display: block;
 }
 
-/* Ground shadow */
+/* Ground contact shadow */
 .scroll-mockup-shadow {
   position: absolute;
-  bottom: -8px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -157,9 +195,9 @@
   pointer-events: none;
 }
 
-/* ────────────────────────────────────────────────────────────
+/* ═══════════════════════════════════════════════════════════════
    RESPONSIVE
-   ─────────────────────────────────────────────────────────── */
+   ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .scroll-hero-sticky {
     grid-template-columns: 1fr;
@@ -174,25 +212,27 @@
     padding: 0 24px;
   }
 
-  .scroll-steps-wrapper {
+  .scroll-copy-area {
+    align-items: center;
     max-width: 100%;
   }
 
-  .scroll-step-text {
-    align-items: center;
-    text-align: center;
-  }
-
+  .scroll-initial-h1,
   .scroll-step-headline {
     text-align: center;
   }
 
-  .scroll-hero-btn {
-    align-self: center;
+  .scroll-step-text {
+    text-align: center;
   }
 
   .scroll-hero-right {
     justify-content: center;
     padding: 0 24px;
+  }
+
+  .scroll-hero-btn {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
